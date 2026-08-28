@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Audio Farble",
+  "version": "3.0.0",
+  "description": "Applies a per-load, per-site, imperceptible perturbation to Web Audio readback to resist AudioContext fingerprinting. No permissions, no background, no network, no telemetry.",
+  "browser_specific_settings": { "gecko": { "id": "audio-farble@vphpersson", "strict_min_version": "128.0" } },
+  "content_scripts": [
+    { "world": "MAIN", "matches": ["*://*/*"], "all_frames": true, "match_about_blank": true, "run_at": "document_start", "js": ["inject.js"] }
+  ]
+}
